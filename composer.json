@@ -1,0 +1,36 @@
+{
+    "name": "sulu/pdf-bundle",
+    "type": "sulu-bundle",
+    "description": "The Sulu Bundle for managing pdf documents",
+    "license": "MIT",
+    "keywords": ["sulu", "pdf"],
+    "authors": [
+        {
+            "name": "Sulu Community",
+            "homepage": "https://github.com/massiveart/SuluPdfBundle/contributors"
+        }
+    ],
+    "require": {
+        "php": ">=5.4",
+        "doctrine/orm": ">=2.2.3,<2.4-dev",
+        "friendsofsymfony/http-cache": "@dev",
+        "jms/serializer-bundle": "@dev",
+        "symfony-cmf/routing-bundle": "1.2.*@dev",
+
+        "sulu/sulu": "dev-develop",
+    },
+    "require-dev": {
+        "sensio/framework-extra-bundle":  "~3.0",
+        "symfony/symfony": "2.5.*",
+        "doctrine/doctrine-bundle": "1.2.*",
+        "symfony/monolog-bundle": "2.4.*",
+        "phpunit/phpunit": "3.7.*",
+        "sulu/test-bundle": "dev-develop"
+    },
+    "autoload": {
+        "psr-0": {
+            "Sulu\\Bundle\\PdfBundle": ""
+        }
+    },
+    "target-dir": "Sulu/Bundle/PdfBundle"
+}
