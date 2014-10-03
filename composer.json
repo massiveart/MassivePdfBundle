@@ -16,8 +16,7 @@
         "friendsofsymfony/http-cache": "@dev",
         "jms/serializer-bundle": "@dev",
         "symfony-cmf/routing-bundle": "1.2.*@dev",
-
-        "sulu/sulu": "dev-develop",
+        "sulu/sulu": "dev-develop"
     },
     "require-dev": {
         "sensio/framework-extra-bundle":  "~3.0",
