@@ -1,7 +1,6 @@
 {
-    "name": "sulu/pdf-bundle",
-    "type": "sulu-bundle",
-    "description": "The Sulu Bundle for managing pdf documents",
+    "name": "massive/pdf-bundle",
+    "description": "The Massive Bundle for managing pdf documents",
     "license": "MIT",
     "keywords": ["sulu", "pdf"],
     "authors": [
@@ -16,7 +15,8 @@
         "friendsofsymfony/http-cache": "@dev",
         "jms/serializer-bundle": "@dev",
         "symfony-cmf/routing-bundle": "1.2.*@dev",
-        "sulu/sulu": "dev-develop"
+        "sulu/sulu": "dev-develop",
+        "knplabs/knp-snappy-bundle": "dev-master"
     },
     "require-dev": {
         "sensio/framework-extra-bundle":  "~3.0",
