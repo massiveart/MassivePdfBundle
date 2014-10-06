@@ -2,7 +2,7 @@
     "name": "massive/pdf-bundle",
     "description": "The Massive Bundle for managing pdf documents",
     "license": "MIT",
-    "keywords": ["sulu", "pdf"],
+    "keywords": ["massive", "pdf"],
     "authors": [
         {
             "name": "MassiveArt Webservices GmbH",
@@ -28,8 +28,8 @@
     },
     "autoload": {
         "psr-0": {
-            "Sulu\\Bundle\\PdfBundle": ""
+            "Massive\\Bundle\\PdfBundle": ""
         }
     },
-    "target-dir": "Sulu/Bundle/PdfBundle"
+    "target-dir": "Massive/Bundle/PdfBundle"
 }
