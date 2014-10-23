@@ -11,7 +11,7 @@
     ],
     "require": {
         "php": ">=5.4",
-        "doctrine/orm": "2.4*",
+        "doctrine/orm": "2.4.*",
         "friendsofsymfony/http-cache": "1.0.*",
         "symfony-cmf/routing-bundle": "1.2.*",
         "sulu/sulu": "dev-develop",
