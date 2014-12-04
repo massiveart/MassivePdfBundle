@@ -10,6 +10,7 @@
     <services>
         <service id="massive_pdf.pdf_manager" class="%massive_pdf.pdf_manager.class%">
             <argument type="service" id="templating" />
+            <argument type="service" id="knp_snappy.pdf" />
         </service>
     </services>
 </container>

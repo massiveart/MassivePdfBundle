@@ -11,6 +11,7 @@
 namespace Massive\Bundle\PdfBundle\Pdf;
 
 use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
+use Knp\Bundle\SnappyBundle\Snappy\LoggableGenerator as PdfGenerator;
 
 class PdfManager
 {
@@ -19,18 +20,27 @@ class PdfManager
      */
     private $templating;
 
+    /**
+     * @var PdfGenerator
+     */
+    private $pdfGenerator;
+
     public function __construct(
-        EngineInterface $templating
-    )
-    {
+        EngineInterface $templating,
+        PdfGenerator $pdfGenerator
+    ) {
         $this->templating = $templating;
+        $this->pdfGenerator = $pdfGenerator;
     }
 
 
     public function convertToPdf($tmpl, $data, $save)
     {
-        // returns a file pointer
-        return $this->renderTemplate($tmpl, $data);
+        $filePath = sys_get_temp_dir() . uniqid() . '.pdf';
+        $pdf = $this->pdfGenerator->getOutputFromHtml(
+            $this->renderTemplate($tmpl, $data)
+        );
+        return $pdf;
     }
 
     public function renderTemplate($tmpl, $data)
