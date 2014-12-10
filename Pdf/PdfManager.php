@@ -37,11 +37,11 @@ class PdfManager
      * This function can be called on a PdFManager instance in order to
      * get a new pdf by the given parameters.
      *
-     * @param $tmpl
-     * @param $data
-     * @param $save
+     * @param $tmpl string
+     * @param $data []
+     * @param $save boolean
      * @param array $options
-     * @return string
+     * @return pdf binary
      */
     public function convertToPdf($tmpl, $data, $save, $options=array())
     {
@@ -49,18 +49,20 @@ class PdfManager
             // ToDO the file needs to be saved
             //$filePath = sys_get_temp_dir() . uniqid() . '.pdf';
         }
+
         $pdf = $this->pdfGenerator->getOutputFromHtml(
             $this->renderTemplate($tmpl, $data),
             $options
         );
+
         return $pdf;
     }
 
     /**
      * Renders a given template and data and returns the rendered html
      *
-     * @param $tmpl
-     * @param $data
+     * @param $tmpl string
+     * @param $data []
      * @return string
      */
     public function renderTemplate($tmpl, $data)
