@@ -34,11 +34,12 @@ class PdfManager
     }
 
 
-    public function convertToPdf($tmpl, $data, $save)
+    public function convertToPdf($tmpl, $data, $save, $options=array())
     {
         $filePath = sys_get_temp_dir() . uniqid() . '.pdf';
         $pdf = $this->pdfGenerator->getOutputFromHtml(
-            $this->renderTemplate($tmpl, $data)
+            $this->renderTemplate($tmpl, $data),
+            $options
         );
         return $pdf;
     }
