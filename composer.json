@@ -11,7 +11,7 @@
     ],
     "require": {
         "php": ">=5.4",
-        "doctrine/orm": "2.4.*",
+        "doctrine/orm": "~2.5",
         "symfony-cmf/routing-bundle": "1.2.*",
         "sulu/sulu": "dev-develop",
         "knplabs/knp-snappy-bundle": "dev-master"
