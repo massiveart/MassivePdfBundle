@@ -3,8 +3,16 @@ MassivePdfBundle
 
 ## Installation
 
+Install the Bundle over composer.
+
 ``` json
 composer require massive/pdf-bundle
+```
+
+Add Bundle to your symfony Kernel.
+
+``` php
+new Massive\Bundle\PdfBundle\MassivePdfBundle(),
 ```
 
 ## Usage
