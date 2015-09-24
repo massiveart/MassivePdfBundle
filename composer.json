@@ -6,24 +6,16 @@
     "authors": [
         {
             "name": "MassiveArt Webservices GmbH",
-            "homepage": "https://github.com/massiveart/SuluPdfBundle/contributors"
+            "homepage": "https://github.com/massiveart/MassivePdfBundle/contributors"
         }
     ],
     "require": {
         "php": ">=5.4",
-        "doctrine/orm": "~2.5",
-        "symfony-cmf/routing-bundle": "1.2.*",
-        "sulu/sulu": "dev-develop",
-        "knplabs/knp-snappy-bundle": "dev-master"
+        "knplabs/knp-snappy-bundle": "~1.3"
     },
     "require-dev": {
         "sensio/framework-extra-bundle":  "~3.0",
-        "symfony/symfony": "2.6.*",
-        "doctrine/doctrine-bundle": "1.2.*",
-        "symfony/monolog-bundle": "2.4.*",
-        "phpunit/phpunit": "3.7.*",
-        "sulu/test-bundle": "dev-develop",
-        "massive/search-bundle": "~1.0@dev"
+        "symfony/symfony": "~2.6"
     },
     "autoload": {
         "psr-0": {
