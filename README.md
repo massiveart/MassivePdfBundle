@@ -1,6 +1,8 @@
 MassivePdfBundle
 ================
 
+Build on `KnpSnappyBundle`: https://github.com/KnpLabs/KnpSnappyBundle
+
 ## Installation
 
 Install the Bundle over composer.
@@ -12,6 +14,7 @@ composer require massive/pdf-bundle
 Add Bundle to your symfony Kernel.
 
 ``` php
+new Knp\Bundle\SnappyBundle\KnpSnappyBundle(),
 new Massive\Bundle\PdfBundle\MassivePdfBundle(),
 ```
 
