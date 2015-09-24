@@ -35,6 +35,16 @@ MacOSX
 
 http://wkhtmltopdf.org/downloads.html
 
+**Configure Knp Snappy Bundle**
+
+``` yml
+knp_snappy:
+    pdf:
+        enabled:    true
+        binary:     /usr/local/bin/wkhtmltopdf
+        options:    []
+```
+
 ## Usage
 ========
 
