@@ -1,10 +1,48 @@
 MassivePdfBundle
 ================
 
+Built upon KnpSnappyBundle: https://github.com/KnpLabs/KnpSnappyBundle
+
 ## Installation
+
+**Install the bundle with composer.**
 
 ``` json
 composer require massive/pdf-bundle
+```
+
+**Add bundle to your symfony kernel.**
+
+``` php
+new Knp\Bundle\SnappyBundle\KnpSnappyBundle(),
+new Massive\Bundle\PdfBundle\MassivePdfBundle(),
+```
+
+**Install wkhtmltopdf**
+
+Ubuntu: 
+
+``` 
+apt-get install wkhtmltopdf
+apt-get install xvfb
+echo ‘xvfb-run –server-args=”-screen 0, 1024x768x24″ /usr/bin/wkhtmltopdf $*’ > /usr/bin/wkhtmltopdf.sh
+chmod a+x /usr/bin/wkhtmltopdf.sh
+ln -s /usr/bin/wkhtmltopdf.sh /usr/local/bin/wkhtmltopdf
+wkhtmltopdf http://www.google.com output.pdf
+```
+
+MacOSX
+
+http://wkhtmltopdf.org/downloads.html
+
+**Configure Knp Snappy Bundle**
+
+``` yml
+knp_snappy:
+    pdf:
+        enabled:    true
+        binary:     /usr/local/bin/wkhtmltopdf
+        options:    []
 ```
 
 ## Usage
