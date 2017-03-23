@@ -1,13 +1,15 @@
 {
     "name": "massive/pdf-bundle",
-    "description": "The Massive Bundle for managing pdf documents",
+    "type": "symfony-bundle",
+    "description": "Bundle for creating pdf documents out of twig templates",
     "license": "MIT",
-    "keywords": ["massive", "pdf"],
+    "keywords": [
+        "massive",
+        "pdf"
+    ],
     "authors": [
-        {
-            "name": "MassiveArt Webservices GmbH",
-            "homepage": "https://github.com/massiveart/MassivePdfBundle/contributors"
-        }
+        { "name": "Philip Nachbauer", "role": "Developer"},
+        { "name": "Elias Hiller", "role": "Developer"}
     ],
     "require": {
         "php": ">=5.4",
