@@ -9,7 +9,7 @@
     ],
     "authors": [
         { "name": "Philip Nachbauer", "role": "Developer"},
-        { "name": "Elias Hiller", "role": "Developer"},
+        { "name": "Elias Hiller", "role": "Developer"}
     ],
     "require": {
         "php": ">=5.4",
