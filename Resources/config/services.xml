@@ -12,5 +12,18 @@
             <argument type="service" id="templating" />
             <argument type="service" id="knp_snappy.pdf" />
         </service>
+
+        <service id="massive_pdf.pdf_factory" class="Massive\Bundle\PdfBundle\Pdf\PdfFactory">
+            <argument type="service" id="templating"/>
+            <argument type="service" id="knp_snappy.pdf"/>
+            <argument type="service" id="request_stack"/>
+        </service>
+
+        <service id="massive_pdf.twig.local_asset" class="Massive\Bundle\PdfBundle\Twig\LocalAssetTwigExtension">
+            <argument type="service" id="request_stack"/>
+            <argument>%massive_pdf.public_dir%</argument>
+
+            <tag name="twig.extension"/>
+        </service>
     </services>
 </container>

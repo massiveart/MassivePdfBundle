@@ -13,6 +13,9 @@ namespace Massive\Bundle\PdfBundle\Pdf;
 use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
 use Knp\Bundle\SnappyBundle\Snappy\LoggableGenerator as PdfGenerator;
 
+/**
+ * @deprecated use PdfFactory instead.
+ */
 class PdfManager
 {
     /**
