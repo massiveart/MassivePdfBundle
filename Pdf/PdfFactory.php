@@ -26,12 +26,6 @@ class PdfFactory
      */
     private $requestStack;
 
-    /**
-     * PdfFactory constructor.
-     *
-     * @param EngineInterface $templating
-     * @param GeneratorInterface $generator
-     */
     public function __construct(
         EngineInterface $templating,
         GeneratorInterface $generator,
