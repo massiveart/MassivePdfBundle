@@ -10,11 +10,11 @@
 
 namespace Massive\Bundle\PdfBundle\Pdf;
 
-use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
 use Knp\Bundle\SnappyBundle\Snappy\LoggableGenerator as PdfGenerator;
+use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
 
 /**
- * @deprecated use PdfFactory instead.
+ * @deprecated use PdfFactory instead
  */
 class PdfManager
 {
@@ -44,9 +44,10 @@ class PdfManager
      * @param $data []
      * @param $save boolean
      * @param array $options
+     *
      * @return pdf binary
      */
-    public function convertToPdf($tmpl, $data, $save, $options=array())
+    public function convertToPdf($tmpl, $data, $save, $options = [])
     {
         if ($save) {
             // ToDO the file needs to be saved
@@ -62,10 +63,11 @@ class PdfManager
     }
 
     /**
-     * Renders a given template and data and returns the rendered html
+     * Renders a given template and data and returns the rendered html.
      *
      * @param $tmpl string
      * @param $data []
+     *
      * @return string
      */
     public function renderTemplate($tmpl, $data)
