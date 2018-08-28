@@ -16,12 +16,14 @@ use Symfony\Component\HttpFoundation\Response;
 
 trait RenderPdfTrait
 {
-    protected function renderPdf($template, $parameters = [], $requestFormat = 'pdf')
+    protected function renderPdf($template, $parameters = [], $requestFormat = 'pdf', Response $response = null)
     {
         /** @var PdfFactory $pdfFactory */
         $pdfFactory = $this->get('massive_pdf.pdf_factory');
 
-        $response = new Response();
+        if (!$response) {
+            $response = new Response();
+        }
 
         if ('pdf' === $requestFormat) {
             $content = $pdfFactory->create($template, array_merge($parameters, ['request_format' => 'pdf']));
