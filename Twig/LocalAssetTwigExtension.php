@@ -16,7 +16,7 @@ use Symfony\Component\HttpFoundation\RequestStack;
 class LocalAssetTwigExtension extends \Twig_Extension
 {
     /**
-     * @var $requestStack
+     * @var RequestStack
      */
     private $requestStack;
 

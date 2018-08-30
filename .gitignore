@@ -13,3 +13,7 @@
 .idea/*
 *.iml
 *.DS_Store
+
+# php-cs-fixer
+/.php_cs
+/.php_cs.cache

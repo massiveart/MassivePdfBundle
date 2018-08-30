@@ -18,5 +18,12 @@
         "psr-4": {
             "Massive\\Bundle\\PdfBundle\\": ""
         }
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.13"
+    },
+    "scripts": {
+        "php-cs": "vendor/bin/php-cs-fixer fix --verbose --diff --dry-run",
+        "php-cs-fix": "vendor/bin/php-cs-fixer fix --verbose --diff"
     }
 }
