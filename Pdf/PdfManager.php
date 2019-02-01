@@ -10,7 +10,7 @@
 
 namespace Massive\Bundle\PdfBundle\Pdf;
 
-use Knp\Bundle\SnappyBundle\Snappy\LoggableGenerator as PdfGenerator;
+use Knp\Snappy\Pdf as PdfGenerator;
 use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
 
 /**
