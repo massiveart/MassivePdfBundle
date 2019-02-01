@@ -10,7 +10,7 @@
 
 namespace Massive\Bundle\PdfBundle\Pdf;
 
-use Knp\Snappy\Pdf as PdfGenerator;
+use Knp\Snappy\GeneratorInterface as PdfGenerator;
 use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
 
 /**
