@@ -54,7 +54,7 @@ class LocalAssetTwigExtension extends \Twig_Extension
     public function getFilters()
     {
         return [
-            new \Twig_SimpleFilter('abbr_class', [$this, 'getLocalAsset']),
+            new \Twig_SimpleFilter('local_asset', [$this, 'getLocalAsset']),
         ];
     }
 
@@ -62,18 +62,25 @@ class LocalAssetTwigExtension extends \Twig_Extension
      * Get local asset path.
      *
      * @param string $assetUrl
+     * @param bool $force
      *
      * @return string
      */
-    public function getLocalAsset($assetUrl)
+    public function getLocalAsset($assetUrl, $force = false)
     {
-        $request = $this->requestStack->getCurrentRequest();
+        $prefix = 'file://' . $this->publicDirectory;
         $assetUrl = '/' . ltrim($assetUrl, '/');
 
-        if ('html' === $request->getRequestFormat()) {
-            return $assetUrl;
+        if ($force) {
+            return $prefix . $assetUrl;
         }
 
-        return 'file://' . $this->publicDirectory . $assetUrl;
+        $request = $this->requestStack->getCurrentRequest();
+
+        if ($request && 'html' === $request->getRequestFormat()) {
+            $prefix = $request->getSchemeAndHttpHost();
+        }
+
+        return $prefix . $assetUrl;
     }
 }
