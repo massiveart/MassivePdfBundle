@@ -40,7 +40,6 @@ http://wkhtmltopdf.org/downloads.html
 See [KnpSnappyBundle](https://github.com/KnpLabs/KnpSnappyBundle#configuration) for configuration.
 
 ## Usage
-========
 
 **Controller Trait**
 
@@ -100,4 +99,10 @@ The `local_asset` avoids doing a http request by using `file://` instead of `htt
 <img src="{{ local_asset('/images/image.jpg') }}" alt="Local Asset">
 ```
 
-This will only work when `$request->getRequestFormat()` will return `pdf`.
+This will only work when `$request->getRequestFormat()` will return `pdf` and not `html`.
+
+If you want to force using `file://` set the second parameter to true:
+
+```twig
+<img src="{{ local_asset('/images/image.jpg', true) }}" alt="Local Asset">
+```

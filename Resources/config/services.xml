@@ -11,13 +11,17 @@
         <service id="massive_pdf.pdf_manager" class="%massive_pdf.pdf_manager.class%">
             <argument type="service" id="templating" />
             <argument type="service" id="knp_snappy.pdf" />
+
+            <deprecated>The "%service_id%" service is deprecated use massive_pdf.pdf_factory instead.</deprecated>
         </service>
 
-        <service id="massive_pdf.pdf_factory" class="Massive\Bundle\PdfBundle\Pdf\PdfFactory">
+        <service id="massive_pdf.pdf_factory" class="Massive\Bundle\PdfBundle\Pdf\PdfFactory" public="true">
             <argument type="service" id="templating"/>
             <argument type="service" id="knp_snappy.pdf"/>
             <argument type="service" id="request_stack"/>
         </service>
+
+        <service id="Massive\Bundle\PdfBundle\Pdf\PdfFactory" alias="massive_pdf.pdf_factory"/>
 
         <service id="massive_pdf.twig.local_asset" class="Massive\Bundle\PdfBundle\Twig\LocalAssetTwigExtension">
             <argument type="service" id="request_stack"/>
