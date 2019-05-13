@@ -65,7 +65,7 @@ class PdfFactory
      *
      * @return string
      */
-    protected function generateHtml($template, $parameters = [])
+    public function generateHtml($template, $parameters = [])
     {
         return $this->templating->render(
             $template,
