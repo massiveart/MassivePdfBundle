@@ -72,7 +72,7 @@ class LocalAssetTwigExtension extends \Twig_Extension
         $filePath = $this->publicDirectory . $assetUrl;
         $prefix = 'file://' . $this->publicDirectory;
 
-        if ($force) {
+        if ($force && file_exists($filePath)) {
             return $prefix . $assetUrl;
         }
 
