@@ -4,7 +4,7 @@ namespace Massive\Bundle\PdfBundle\Pdf;
 
 use Knp\Snappy\GeneratorInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
-use Symfony\Component\Templating\EngineInterface;
+use Twig\Environment;
 
 /**
  * The pdf factory will create pdfs.
@@ -17,9 +17,9 @@ class PdfFactory
     private $generator;
 
     /**
-     * @var EngineInterface
+     * @var Environment
      */
-    private $templating;
+    private $twig;
 
     /**
      * @var RequestStack
@@ -27,12 +27,12 @@ class PdfFactory
     private $requestStack;
 
     public function __construct(
-        EngineInterface $templating,
+        Environment $twig,
         GeneratorInterface $generator,
         RequestStack $requestStack
     ) {
         $this->generator = $generator;
-        $this->templating = $templating;
+        $this->twig = $twig;
         $this->requestStack = $requestStack;
     }
 
@@ -67,7 +67,7 @@ class PdfFactory
      */
     public function generateHtml($template, $parameters = [])
     {
-        return $this->templating->render(
+        return $this->twig->render(
             $template,
             $parameters
         );

@@ -11,7 +11,7 @@
 namespace Massive\Bundle\PdfBundle\Pdf;
 
 use Knp\Snappy\GeneratorInterface as PdfGenerator;
-use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
+use Twig\Environment;
 
 /**
  * @deprecated use PdfFactory instead
@@ -19,9 +19,9 @@ use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
 class PdfManager
 {
     /**
-     * @var EngineInterface
+     * @var Environment
      */
-    private $templating;
+    private $twig;
 
     /**
      * @var PdfGenerator
@@ -29,10 +29,10 @@ class PdfManager
     private $pdfGenerator;
 
     public function __construct(
-        EngineInterface $templating,
+        Environment $twig,
         PdfGenerator $pdfGenerator
     ) {
-        $this->templating = $templating;
+        $this->twig = $twig;
         $this->pdfGenerator = $pdfGenerator;
     }
 
@@ -65,14 +65,14 @@ class PdfManager
     /**
      * Renders a given template and data and returns the rendered html.
      *
-     * @param $tmpl string
+     * @param $template string
      * @param $data []
      *
      * @return string
      */
-    public function renderTemplate($tmpl, $data)
+    public function renderTemplate($template, $data)
     {
         // should return a rendered template
-        return $this->templating->render($tmpl, $data);
+        return $this->twig->render($template, $data);
     }
 }
