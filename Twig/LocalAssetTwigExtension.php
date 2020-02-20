@@ -68,16 +68,17 @@ class LocalAssetTwigExtension extends \Twig_Extension
      */
     public function getLocalAsset($assetUrl, $force = false)
     {
-        $prefix = 'file://' . $this->publicDirectory;
         $assetUrl = '/' . ltrim($assetUrl, '/');
+        $filePath = $this->publicDirectory . $assetUrl;
+        $prefix = 'file://' . $this->publicDirectory;
 
-        if ($force) {
+        if ($force && file_exists($filePath)) {
             return $prefix . $assetUrl;
         }
 
         $request = $this->requestStack->getCurrentRequest();
 
-        if ($request && 'html' === $request->getRequestFormat()) {
+        if ($request && ('html' === $request->getRequestFormat() || !file_exists($filePath))) {
             $prefix = $request->getSchemeAndHttpHost();
         }
 
