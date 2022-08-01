@@ -17,8 +17,13 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('massive_art_pdf');
+        $treeBuilder = new TreeBuilder('massive_art_pdf');
+        if (method_exists($treeBuilder, 'getRootNode')) {
+            $root = $treeBuilder->getRootNode();
+        } else {
+            // BC layer for symfony/config 4.1 and older
+            $root = $treeBuilder->root('massive_art_pdf');
+        }
 
         $rootNode
             ->children()
