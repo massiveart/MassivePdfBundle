@@ -19,10 +19,10 @@ class Configuration implements ConfigurationInterface
     {
         $treeBuilder = new TreeBuilder('massive_pdf');
         if (method_exists($treeBuilder, 'getRootNode')) {
-            $root = $treeBuilder->getRootNode();
+            $rootNode = $treeBuilder->getRootNode();
         } else {
             // BC layer for symfony/config 4.1 and older
-            $root = $treeBuilder->root('massive_pdf');
+            $rootNode = $treeBuilder->root('massive_pdf');
         }
 
         $rootNode
