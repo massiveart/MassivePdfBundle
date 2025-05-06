@@ -12,8 +12,11 @@
 namespace Massive\Bundle\PdfBundle\Twig;
 
 use Symfony\Component\HttpFoundation\RequestStack;
+use Twig\Extension\AbstractExtension;
+use Twig\TwigFilter;
+use Twig\TwigFunction;
 
-class LocalAssetTwigExtension extends \Twig_Extension
+class LocalAssetTwigExtension extends AbstractExtension
 {
     /**
      * @var RequestStack
@@ -38,23 +41,17 @@ class LocalAssetTwigExtension extends \Twig_Extension
         $this->publicDirectory = rtrim($publicDirectory, '/') . '/';
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getFunctions()
     {
         return [
-            new \Twig_SimpleFunction('local_asset', [$this, 'getLocalAsset']),
+            new TwigFunction('local_asset', [$this, 'getLocalAsset']),
         ];
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getFilters()
     {
         return [
-            new \Twig_SimpleFilter('local_asset', [$this, 'getLocalAsset']),
+            new TwigFilter('local_asset', [$this, 'getLocalAsset']),
         ];
     }
 

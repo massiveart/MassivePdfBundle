@@ -1,4 +1,5 @@
 <?php
+
 /*
  * This file is part of the Sulu CMS.
  *
@@ -51,7 +52,7 @@ class PdfManager
     {
         if ($save) {
             // ToDO the file needs to be saved
-            //$filePath = sys_get_temp_dir() . uniqid() . '.pdf';
+            // $filePath = sys_get_temp_dir() . uniqid() . '.pdf';
         }
 
         $pdf = $this->pdfGenerator->getOutputFromHtml(

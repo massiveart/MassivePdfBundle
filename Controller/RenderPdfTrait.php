@@ -13,8 +13,6 @@ namespace Massive\Bundle\PdfBundle\Controller;
 
 use Massive\Bundle\PdfBundle\Pdf\PdfFactory;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Bundle\FrameworkBundle\Tests\Controller\ContainerAwareController;
-use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\HttpFoundation\Response;
 
 trait RenderPdfTrait
